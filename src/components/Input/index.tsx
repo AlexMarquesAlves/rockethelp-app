@@ -1,23 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { IInputProps, Input as NativeBaseInput } from "native-base";
 
-export const Input = () => {
+export function Input({ ...rest }: IInputProps) {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Input</Text>
-    </View>
+    <NativeBaseInput
+      bg={"gray.700"}
+      h={14}
+      size={"md"}
+      borderWidth={0}
+      fontSize={"md"}
+      fontFamily={"body"}
+      color={"white"}
+      placeholderTextColor={"gray.300"}
+      {...rest}
+    />
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+}
