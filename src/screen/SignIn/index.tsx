@@ -1,9 +1,10 @@
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 export const SignIn = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>SignIn</Text>
+      <Text style={styles.title}>Hello Duque</Text>
     </View>
   );
 };
