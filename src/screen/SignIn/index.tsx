@@ -1,5 +1,4 @@
 import { Heading, VStack } from "native-base";
-import React from "react";
 
 export const SignIn = () => {
   return (
