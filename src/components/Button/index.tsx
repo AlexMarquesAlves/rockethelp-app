@@ -11,6 +11,9 @@ export function Button({ title, ...rest }: Props) {
       h={14}
       fontSize={"sm"}
       rounded={"sm"}
+      _pressed={{
+        bg: "green.500",
+      }}
       {...rest}
     >
       <Heading>{title}</Heading>
