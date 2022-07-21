@@ -36,7 +36,7 @@ export function Home() {
           justifyContent={"space-between"}
           alignItems={"center"}
         >
-          <Heading>Meus chamados</Heading>
+          <Heading color={colors.gray[100]}>Meus chamados</Heading>
           <Text color={"gray.200"}>3</Text>
         </HStack>
       </VStack>
