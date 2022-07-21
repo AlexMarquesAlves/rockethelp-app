@@ -1,4 +1,11 @@
-import { HStack, IconButton, Text, useTheme, VStack } from "native-base";
+import {
+  Heading,
+  HStack,
+  IconButton,
+  Text,
+  useTheme,
+  VStack,
+} from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
 
@@ -29,6 +36,7 @@ export function Home() {
           justifyContent={"space-between"}
           alignItems={"center"}
         >
+          <Heading>Meus chamados</Heading>
           <Text color={"gray.200"}>3</Text>
         </HStack>
       </VStack>
