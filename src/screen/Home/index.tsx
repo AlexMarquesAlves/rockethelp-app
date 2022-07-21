@@ -8,6 +8,7 @@ import {
 } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
+import { Filter } from "../../components";
 
 export function Home() {
   const { colors } = useTheme();
@@ -42,7 +43,10 @@ export function Home() {
         </HStack>
       </VStack>
 
-      <HStack>{/* Filters */}</HStack>
+      <HStack>
+        {/* Filters */}
+        <Filter></Filter>
+      </HStack>
     </VStack>
   );
 }
