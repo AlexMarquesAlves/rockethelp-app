@@ -27,7 +27,7 @@ export const SignIn = () => {
         secureTextEntry
       />
 
-      <Button title={"Entrar"} />
+      <Button title={"Entrar"} w={"full"} />
     </VStack>
   );
 };
