@@ -1,9 +1,13 @@
 import { Button as ButtonNativeBase, IButtonProps, Heading } from "native-base";
 
-export function Button() {
+type Props = {
+  title: string;
+};
+
+export function Button({ title }: Props) {
   return (
     <ButtonNativeBase>
-      <Heading>Entrar</Heading>
+      <Heading>{title}</Heading>
     </ButtonNativeBase>
   );
 }
