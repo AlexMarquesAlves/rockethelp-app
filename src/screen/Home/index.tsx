@@ -41,12 +41,13 @@ export function Home() {
           <Heading color={colors.gray[100]}>Meus chamados</Heading>
           <Text color={"gray.200"}>3</Text>
         </HStack>
-      </VStack>
 
-      <HStack>
-        {/* Filters */}
-        <Filter></Filter>
-      </HStack>
+        <HStack>
+          {/* Filters */}
+          <Filter type={"open"} title={"Em andamento"} />
+          <Filter type={"closed"} title={"Finalizados"} />
+        </HStack>
+      </VStack>
     </VStack>
   );
 }
