@@ -1,23 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { HStack, VStack } from "native-base";
 
-export const Home = () => {
+export function Home() {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Home</Text>
-    </View>
+    <VStack flex={1} pb={6} bg={"gray.700"}>
+      <HStack
+        w={"full"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        bg={"gray.600"}
+        pt={12}
+        pb={5}
+        px={6}
+      ></HStack>
+    </VStack>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+}
