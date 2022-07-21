@@ -7,5 +7,9 @@ type Props = IButtonProps & {
 };
 
 export function Filter({ title, isActive = false, type, ...rest }: Props) {
-  return <Button variant={"outline"}></Button>;
+  return (
+    <Button variant={"outline"}>
+      <Text>{title}</Text>
+    </Button>
+  );
 }
