@@ -1,8 +1,10 @@
-import { HStack, IconButton, VStack } from "native-base";
+import { HStack, IconButton, useTheme, VStack } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
 
 export function Home() {
+  const { colors } = useTheme();
+
   return (
     <VStack flex={1} pb={6} bg={"gray.700"}>
       <HStack
@@ -16,7 +18,7 @@ export function Home() {
       >
         <Logo />
 
-        <IconButton icon={<SignOut size={26} />} />
+        <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} />
       </HStack>
     </VStack>
   );
