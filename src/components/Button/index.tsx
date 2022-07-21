@@ -1,23 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { Button as ButtonNativeBase, IButtonProps, Heading } from "native-base";
 
-export const Button = () => {
+export function Button() {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Button</Text>
-    </View>
+    <ButtonNativeBase>
+      <Heading>Entrar</Heading>
+    </ButtonNativeBase>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+}
