@@ -1,4 +1,4 @@
-import { VStack, Text, Button, IButtonProps, useTheme } from "native-base";
+import { Text, Button, IButtonProps, useTheme } from "native-base";
 
 type Props = IButtonProps & {
   title: string;
@@ -7,5 +7,5 @@ type Props = IButtonProps & {
 };
 
 export function Filter({ title, isActive = false, type, ...rest }: Props) {
-  return <VStack></VStack>;
+  return <Button variant={"outline"}></Button>;
 }
