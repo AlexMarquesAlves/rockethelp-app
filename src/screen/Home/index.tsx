@@ -42,7 +42,7 @@ export function Home() {
           <Text color={"gray.200"}>3</Text>
         </HStack>
 
-        <HStack>
+        <HStack space={3} mb={8}>
           {/* Filters */}
           <Filter type={"open"} title={"Em andamento"} />
           <Filter type={"closed"} title={"Finalizados"} />
