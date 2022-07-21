@@ -1,4 +1,4 @@
-import { HStack, VStack } from "native-base";
+import { HStack, IconButton, VStack } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 
 export function Home() {
@@ -14,6 +14,8 @@ export function Home() {
         px={6}
       >
         <Logo />
+
+        <IconButton icon={} />
       </HStack>
     </VStack>
   );
