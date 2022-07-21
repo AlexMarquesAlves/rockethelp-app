@@ -1,4 +1,5 @@
 import { HStack, VStack } from "native-base";
+import Logo from "../../assets/logo-secondary.svg";
 
 export function Home() {
   return (
@@ -11,7 +12,9 @@ export function Home() {
         pt={12}
         pb={5}
         px={6}
-      ></HStack>
+      >
+        <Logo />
+      </HStack>
     </VStack>
   );
 }
