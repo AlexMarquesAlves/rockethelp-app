@@ -14,6 +14,7 @@ export function Home() {
 
   return (
     <VStack flex={1} pb={6} bg={"gray.700"}>
+      {/* Heading Bar */}
       <HStack
         w={"full"}
         justifyContent={"space-between"}
@@ -27,7 +28,7 @@ export function Home() {
 
         <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} />
       </HStack>
-
+      {/* Info */}
       <VStack flex={1} px={6}>
         <HStack
           w={"full"}
@@ -40,6 +41,8 @@ export function Home() {
           <Text color={"gray.200"}>3</Text>
         </HStack>
       </VStack>
+
+      <HStack>{/* Filters */}</HStack>
     </VStack>
   );
 }
