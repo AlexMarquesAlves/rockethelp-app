@@ -8,7 +8,14 @@ type Props = IButtonProps & {
 
 export function Filter({ title, isActive = false, type, ...rest }: Props) {
   return (
-    <Button variant={"outline"}>
+    <Button
+      variant={"outline"}
+      borderWidth={isActive ? 1 : 0}
+      borderColor={""}
+      bgColor={"gray.700"}
+      flex={1}
+      size={"sm"}
+    >
       <Text>{title}</Text>
     </Button>
   );
