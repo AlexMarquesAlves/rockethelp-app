@@ -1,1 +1,2 @@
-export { SignIn } from "./SignIn/index";
+export { SignIn } from "./SignIn";
+export { Home } from "./Home";
