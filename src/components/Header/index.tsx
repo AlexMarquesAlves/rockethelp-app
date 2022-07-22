@@ -25,7 +25,15 @@ export function Header({ title, ...rest }: Props) {
     >
       <IconButton icon={<CaretLeft color={colors.gray[200]} size={24} />} />
 
-      <Heading></Heading>
+      <Heading
+        color={"gray.100"}
+        textAlign={"center"}
+        fontSize={"lg"}
+        flex={1}
+        ml={-6}
+      >
+        {title}
+      </Heading>
     </HStack>
   );
 }
