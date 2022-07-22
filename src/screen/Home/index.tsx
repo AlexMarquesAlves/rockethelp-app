@@ -16,6 +16,14 @@ export function Home() {
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
+  const [order, setOrder] = useState([
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+  ]);
 
   return (
     <VStack flex={1} pb={6} bg={"gray.700"}>
