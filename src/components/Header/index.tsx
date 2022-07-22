@@ -1,4 +1,5 @@
 import { HStack, IconButton } from "native-base";
+import { CaretLeft } from "phosphor-react-native";
 
 export function Header() {
   return (
@@ -10,7 +11,7 @@ export function Header() {
       pb={6}
       pt={12}
     >
-      <IconButton></IconButton>
+      <IconButton icon={<CaretLeft />} />
     </HStack>
   );
 }
