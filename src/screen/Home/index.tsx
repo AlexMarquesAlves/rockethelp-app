@@ -131,6 +131,7 @@ export function Home() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Order data={item} />}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 100 }}
         />
 
         <Button title={"Nova solicitação"} />
