@@ -1,4 +1,4 @@
-import { HStack, IconButton, useTheme } from "native-base";
+import { Heading, HStack, IconButton, useTheme } from "native-base";
 import { CaretLeft } from "phosphor-react-native";
 
 export function Header() {
@@ -14,6 +14,8 @@ export function Header() {
       pt={12}
     >
       <IconButton icon={<CaretLeft color={colors.gray[200]} size={24} />} />
+
+      <Heading></Heading>
     </HStack>
   );
 }
