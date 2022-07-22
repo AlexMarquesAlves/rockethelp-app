@@ -9,9 +9,13 @@ import {
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
 import { Filter } from "../../components";
+import { useState } from "react";
 
 export function Home() {
   const { colors } = useTheme();
+  const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
+    "open"
+  );
 
   return (
     <VStack flex={1} pb={6} bg={"gray.700"}>
