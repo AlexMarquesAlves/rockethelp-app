@@ -1,23 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { HStack } from "native-base";
 
-export const Header = () => {
+export function Header() {
   return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Header</Text>
-    </View>
+    <HStack
+      w={"full"}
+      justifyContent={"space-between"}
+      alignItems={"center"}
+      bg={"gray.600"}
+      pb={6}
+      pt={12}
+    ></HStack>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+}
