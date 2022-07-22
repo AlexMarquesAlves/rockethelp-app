@@ -8,6 +8,14 @@ export function Register() {
       <Header title={"Nova solicitação"} />
 
       <Input placeholder={"Número do patrimônio"} mt={4} />
+
+      <Input
+        placeholder={"Descrição do problema"}
+        mt={5}
+        flex={1}
+        multiline
+        textAlignVertical={"top"}
+      />
     </VStack>
   );
 }
