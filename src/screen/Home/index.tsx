@@ -74,6 +74,21 @@ export function Home() {
           renderItem={({ item }) => <Order data={item} />}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 100 }}
+          ListEmptyComponent={() => (
+            <Center>
+              <ChatTeardropText color={colors.gray[300]} size={40} />
+              <Text
+                color={"gray.300"}
+                fontSize={"xl"}
+                mt={6}
+                textAlign={"center"}
+              >
+                Você ainda não possui {"\n"}
+                solicitações{" "}
+                {statusSelected === "open" ? "em andamento" : "finalizadas"}
+              </Text>
+            </Center>
+          )}
         />
 
         <Button title={"Nova solicitação"} />
