@@ -12,6 +12,11 @@ type Props = {
 };
 
 export function Order({ data, ...rest }: Props) {
+  const { colors } = useTheme();
+
+  const statusColors =
+    data.status === "open" ? colors.secondary[700] : colors.green[300];
+
   return (
     <HStack
       bg={"gray.600"}
