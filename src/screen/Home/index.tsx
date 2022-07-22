@@ -9,15 +9,16 @@ import {
 } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
-import { Filter } from "../../components";
+import { Filter, Order } from "../../components";
 import { useState } from "react";
+import { OrderProps } from "../../components/Order";
 
 export function Home() {
   const { colors } = useTheme();
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
-  const [orders, setOrders] = useState([
+  const [orders, setOrders] = useState<OrderProps[]>([
     {
       id: "1",
       patrimony: "123456",
@@ -74,9 +75,7 @@ export function Home() {
         <FlatList
           data={orders}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Text color={"white"}>{item.patrimony}</Text>
-          )}
+          renderItem={({ item }) => <Order data={item} />}
         />
       </VStack>
     </VStack>

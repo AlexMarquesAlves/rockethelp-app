@@ -14,7 +14,9 @@ type Props = {
 export function Order({ data, ...rest }: Props) {
   return (
     <HStack>
-      <Text>{""}</Text>
+      <Text color={"white"} fontSize={"md"}>
+        Patrimonio{data.patrimony}
+      </Text>
     </HStack>
   );
 }
