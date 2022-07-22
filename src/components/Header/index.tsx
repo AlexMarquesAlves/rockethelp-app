@@ -11,7 +11,7 @@ type Props = StyledProps & {
   title: string;
 };
 
-export function Header() {
+export function Header({ title, ...rest }: Props) {
   const { colors } = useTheme();
 
   return (
