@@ -31,6 +31,8 @@ export function Order({ data, ...rest }: Props) {
         <Text color={"white"} fontSize={"md"}>
           Patrimonio{data.patrimony}
         </Text>
+
+        <HStack></HStack>
       </VStack>
     </HStack>
   );
