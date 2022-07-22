@@ -1,4 +1,9 @@
 import { Box, HStack, Text, useTheme, VStack } from "native-base";
+import {
+  ClockAfternoon,
+  Hourglass,
+  CircleWavyCheck,
+} from "phosphor-react-native";
 
 export type OrderProps = {
   id: string;
@@ -31,8 +36,13 @@ export function Order({ data, ...rest }: Props) {
         <Text color={"white"} fontSize={"md"}>
           Patrimonio{data.patrimony}
         </Text>
-
-        <HStack></HStack>
+        {/* icons */}
+        <HStack>
+          <ClockAfternoon size={15} color={colors.gray[300]} />
+          <Text color={"gray.200"} fontSize={"xs"} ml={1}>
+            {data.when}
+          </Text>
+        </HStack>
       </VStack>
     </HStack>
   );
