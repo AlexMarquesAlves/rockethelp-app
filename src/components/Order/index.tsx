@@ -1,4 +1,4 @@
-import { Box, HStack, Text, useTheme, VStack } from "native-base";
+import { Box, Circle, HStack, Text, useTheme, VStack } from "native-base";
 import {
   ClockAfternoon,
   Hourglass,
@@ -44,6 +44,8 @@ export function Order({ data, ...rest }: Props) {
           </Text>
         </HStack>
       </VStack>
+
+      <Circle></Circle>
     </HStack>
   );
 }
