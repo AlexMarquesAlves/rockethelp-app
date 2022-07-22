@@ -52,11 +52,13 @@ export function Home() {
             type={"open"}
             title={"Em andamento"}
             onPress={() => setStatusSelected("open")}
+            isActive={statusSelected === `open`}
           />
           <Filter
             type={"closed"}
             title={"Finalizados"}
             onPress={() => setStatusSelected("closed")}
+            isActive={statusSelected === `closed`}
           />
         </HStack>
       </VStack>
