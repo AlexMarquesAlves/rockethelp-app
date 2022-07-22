@@ -1,4 +1,5 @@
 import {
+  FlatList,
   Heading,
   HStack,
   IconButton,
@@ -16,7 +17,7 @@ export function Home() {
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
-  const [order, setOrder] = useState([
+  const [orders, setOrders] = useState([
     {
       id: "1",
       patrimony: "123456",
@@ -69,6 +70,14 @@ export function Home() {
             isActive={statusSelected === `closed`}
           />
         </HStack>
+
+        <FlatList
+          data={orders}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Text color={"white"}>{item.patrimony}</Text>
+          )}
+        />
       </VStack>
     </VStack>
   );
