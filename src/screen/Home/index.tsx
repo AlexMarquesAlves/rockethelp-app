@@ -48,8 +48,16 @@ export function Home() {
 
         <HStack space={3} mb={8}>
           {/* Filters */}
-          <Filter type={"open"} title={"Em andamento"} />
-          <Filter type={"closed"} title={"Finalizados"} />
+          <Filter
+            type={"open"}
+            title={"Em andamento"}
+            onPress={() => setStatusSelected("open")}
+          />
+          <Filter
+            type={"closed"}
+            title={"Finalizados"}
+            onPress={() => setStatusSelected("closed")}
+          />
         </HStack>
       </VStack>
     </VStack>
