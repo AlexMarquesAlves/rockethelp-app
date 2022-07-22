@@ -1,4 +1,4 @@
-import { Box, HStack, Text, useTheme } from "native-base";
+import { Box, HStack, Text, useTheme, VStack } from "native-base";
 
 export type OrderProps = {
   id: string;
@@ -27,9 +27,11 @@ export function Order({ data, ...rest }: Props) {
       overflow={"hidden"}
     >
       <Box h={"full"} w={2} bg={statusColors} />
-      <Text color={"white"} fontSize={"md"}>
-        Patrimonio{data.patrimony}
-      </Text>
+      <VStack>
+        <Text color={"white"} fontSize={"md"}>
+          Patrimonio{data.patrimony}
+        </Text>
+      </VStack>
     </HStack>
   );
 }
