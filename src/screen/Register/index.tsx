@@ -16,6 +16,8 @@ export function Register() {
         multiline
         textAlignVertical={"top"}
       />
+
+      <Button title={"Cadastrar"} mt={5} />
     </VStack>
   );
 }
