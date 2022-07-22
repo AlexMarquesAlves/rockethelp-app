@@ -1,4 +1,5 @@
 import {
+  Center,
   FlatList,
   Heading,
   HStack,
@@ -8,7 +9,7 @@ import {
   VStack,
 } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
-import { SignOut } from "phosphor-react-native";
+import { ChatTeardropText, SignOut } from "phosphor-react-native";
 import { Button, Filter, Order } from "../../components";
 import { useState } from "react";
 import { OrderProps } from "../../components/Order";
@@ -19,66 +20,7 @@ export function Home() {
     "open"
   );
   const [orders, setOrders] = useState<OrderProps[]>([
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
-    {
-      id: "1",
-      patrimony: "123456",
-      when: "18/07/2022 às 10h",
-      status: "open",
-    },
+    //
   ]);
 
   return (
