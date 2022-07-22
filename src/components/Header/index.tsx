@@ -1,4 +1,4 @@
-import { HStack } from "native-base";
+import { HStack, IconButton } from "native-base";
 
 export function Header() {
   return (
@@ -9,6 +9,8 @@ export function Header() {
       bg={"gray.600"}
       pb={6}
       pt={12}
-    ></HStack>
+    >
+      <IconButton></IconButton>
+    </HStack>
   );
 }
