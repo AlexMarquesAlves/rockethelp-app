@@ -1,23 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { HStack, Text } from "native-base";
 
-export const Order = () => {
-  return (
-    <View style={ styles.container }>
-      <Text style={ styles.title }>Order</Text>
-    </View>
-  );
+export type OrderProps = {
+  id: string;
+  patrimony: string;
+  when: string;
+  status: "open" | "closed";
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#312e38',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    color: '#fff',
-  },
-});
+type Props = {};
+
+export function Order() {
+  return (
+    <HStack>
+      <Text>{""}</Text>
+    </HStack>
+  );
+}
