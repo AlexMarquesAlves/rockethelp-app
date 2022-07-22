@@ -25,6 +25,60 @@ export function Home() {
       when: "18/07/2022 às 10h",
       status: "open",
     },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
+    {
+      id: "1",
+      patrimony: "123456",
+      when: "18/07/2022 às 10h",
+      status: "open",
+    },
   ]);
 
   return (
