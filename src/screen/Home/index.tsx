@@ -9,7 +9,7 @@ import {
 } from "native-base";
 import Logo from "../../assets/logo-secondary.svg";
 import { SignOut } from "phosphor-react-native";
-import { Filter, Order } from "../../components";
+import { Button, Filter, Order } from "../../components";
 import { useState } from "react";
 import { OrderProps } from "../../components/Order";
 
@@ -77,6 +77,8 @@ export function Home() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Order data={item} />}
         />
+
+        <Button title={"Nova solicitação"} />
       </VStack>
     </VStack>
   );
