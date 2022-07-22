@@ -130,6 +130,7 @@ export function Home() {
           data={orders}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Order data={item} />}
+          showsVerticalScrollIndicator={false}
         />
 
         <Button title={"Nova solicitação"} />
