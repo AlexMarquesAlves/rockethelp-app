@@ -45,7 +45,7 @@ export function Order({ data, ...rest }: Props) {
         </HStack>
       </VStack>
 
-      <Circle></Circle>
+      <Circle bg={"gray.500"} h={12} w={12} mr={5}></Circle>
     </HStack>
   );
 }
