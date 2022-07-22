@@ -7,7 +7,9 @@ export type OrderProps = {
   status: "open" | "closed";
 };
 
-type Props = {};
+type Props = {
+  data: OrderProps;
+};
 
 export function Order() {
   return (
