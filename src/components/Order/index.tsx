@@ -11,7 +11,7 @@ type Props = {
   data: OrderProps;
 };
 
-export function Order() {
+export function Order({ data, ...rest }: Props) {
   return (
     <HStack>
       <Text>{""}</Text>
