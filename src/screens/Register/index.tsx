@@ -58,7 +58,12 @@ export function Register() {
         textAlignVertical={"top"}
       />
 
-      <Button title={"Cadastrar"} mt={5} />
+      <Button
+        title={"Cadastrar"}
+        mt={5}
+        isLoading={isloading}
+        onPress={handleNewOrderRegster}
+      />
     </VStack>
   );
 }
