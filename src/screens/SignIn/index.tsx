@@ -26,6 +26,10 @@ export function SignIn() {
       .catch((error) => {
         console.log(error);
         setIsLoading(false);
+
+        if (error.code === "auth/invalid-email") {
+          return Alert.alert("Entrar", "E-mail inválido");
+        }
       });
 
     // console.log(email, password);
