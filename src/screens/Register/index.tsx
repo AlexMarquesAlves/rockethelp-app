@@ -1,6 +1,7 @@
 import firestore, {
   FirebaseFirestoreTypes,
 } from "@react-native-firebase/firestore";
+import { useNavigation } from "@react-navigation/native";
 import { VStack } from "native-base";
 import { useState } from "react";
 import { Alert } from "react-native";
@@ -11,6 +12,8 @@ export function Register() {
   const [isloading, setIsloading] = useState(false);
   const [patrimony, setPatrimony] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigation = useNavigation();
 
   function handleNewOrderRegster() {
     if (!patrimony || !description) {
@@ -29,6 +32,15 @@ export function Register() {
       })
       .then(() => {
         Alert.alert("Solicitação", "Solicitação registrada com sucesso");
+        navigation.goBack();
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsloading(false);
+        return Alert.alert(
+          "Solicitação",
+          "Não foi possível Registrar a solicitação"
+        );
       });
   }
 
