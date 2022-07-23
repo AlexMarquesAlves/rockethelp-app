@@ -11,11 +11,15 @@ import {
 import Logo from "../../assets/logo_secondary.svg";
 import { ChatTeardropText, SignOut } from "phosphor-react-native";
 import { Button, Filter, Order } from "../../components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { OrderProps } from "../../components/Order";
 import { useNavigation } from "@react-navigation/native";
+import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
+import { Alert } from "react-native";
+import firestore from "@react-native-firebase/firestore";
 
 export function Home() {
+  const [loading, setLoading] = useState(true);
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
@@ -39,6 +43,38 @@ export function Home() {
     navigation.navigate("details", { orderId });
   }
 
+  function handleLogout() {
+    auth()
+      .signOut()
+      .catch((error) => {
+        console.log(error);
+        Alert.alert("Sair", "Não foi possível sair");
+      });
+  }
+
+  useEffect(() => {
+    setLoading(true);
+
+    const subscriber = firestore()
+      .collection("orders")
+      .where("status", "==", statusSelected)
+      .onSnapshot((snapshot) => {
+        const data = snapshot.docs.map((doc) => {
+          const { patrimony, description, status, created_at } = doc.data();
+
+          return {
+            id: doc.id,
+            patrimony,
+            description,
+            status,
+            // when: ===> Pausa aqui <===
+          };
+        });
+      });
+
+    return () => {};
+  }, []);
+
   return (
     <VStack flex={1} pb={6} bg="gray.700">
       <HStack
@@ -52,7 +88,10 @@ export function Home() {
       >
         <Logo />
 
-        <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} />
+        <IconButton
+          icon={<SignOut size={26} color={colors.gray[300]} />}
+          onPress={handleLogout}
+        />
       </HStack>
 
       <VStack flex={1} px={6}>
