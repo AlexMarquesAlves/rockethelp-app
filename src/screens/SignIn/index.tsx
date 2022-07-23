@@ -21,7 +21,14 @@ export function SignIn() {
 
     setIsLoading(true);
 
-    // console.log(name, password);
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(false);
+      });
+
+    // console.log(email, password);
   }
 
   return (
