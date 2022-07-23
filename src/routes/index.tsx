@@ -3,6 +3,7 @@ import { SignIn } from "../screens";
 import { AppRoutes } from "./app.routes";
 import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import { useEffect, useState } from "react";
+import { Loading } from "../components";
 
 export function Routes() {
   const [loading, setLoading] = useState(true);
@@ -19,9 +20,13 @@ export function Routes() {
     };
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <NavigationContainer>
-      <AppRoutes />
+      {user ? <AppRoutes /> : <SignIn />}
     </NavigationContainer>
   );
 }
