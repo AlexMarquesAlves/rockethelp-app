@@ -1,6 +1,4 @@
-import firestore, {
-  FirebaseFirestoreTypes,
-} from "@react-native-firebase/firestore";
+import firestore from "@react-native-firebase/firestore";
 import { useNavigation } from "@react-navigation/native";
 import { VStack } from "native-base";
 import { useState } from "react";
