@@ -8,7 +8,7 @@ import {
   useTheme,
   VStack,
 } from "native-base";
-import Logo from "../../assets/logo-secondary.svg";
+import Logo from "../../assets/logo_secondary.svg";
 import { ChatTeardropText, SignOut } from "phosphor-react-native";
 import { Button, Filter, Order } from "../../components";
 import { useState } from "react";
