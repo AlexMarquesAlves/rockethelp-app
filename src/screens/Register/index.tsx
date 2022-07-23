@@ -1,5 +1,6 @@
 import { VStack } from "native-base";
 import { useState } from "react";
+import { Alert } from "react-native";
 import { Button, Input } from "../../components";
 import { Header } from "../../components";
 
@@ -7,6 +8,14 @@ export function Register() {
   const [isloading, setIsloading] = useState(false);
   const [patrimony, setPatrimony] = useState("");
   const [description, setDescription] = useState("");
+
+  function handleNewOrderRegster() {
+    if (!patrimony || !description) {
+      Alert.alert("Registrar", "Preencha todos os campos.");
+    }
+
+    setIsloading(true);
+  }
 
   return (
     <VStack flex={1} p={6} bg={"gray.600"}>
