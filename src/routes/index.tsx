@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { SignIn } from "../screen";
+import { SignIn } from "../screens";
 import { AppRoutes } from "./app.routes";
 
 export function Routes() {
