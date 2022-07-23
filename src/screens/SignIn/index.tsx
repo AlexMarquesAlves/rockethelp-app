@@ -30,6 +30,10 @@ export function SignIn() {
         if (error.code === "auth/invalid-email") {
           return Alert.alert("Entrar", "E-mail inválido");
         }
+
+        if (error.code === "auth/wrong-password") {
+          return Alert.alert("Entrar", "E-mail ou senha inválida");
+        }
       });
 
     // console.log(email, password);
