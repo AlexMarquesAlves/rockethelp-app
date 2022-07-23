@@ -48,7 +48,11 @@ export function Register() {
     <VStack flex={1} p={6} bg={"gray.600"}>
       <Header title={"Nova solicitação"} />
 
-      <Input placeholder={"Número do patrimônio"} mt={4} />
+      <Input
+        placeholder={"Número do patrimônio"}
+        mt={4}
+        onChangeText={setPatrimony}
+      />
 
       <Input
         placeholder={"Descrição do problema"}
@@ -56,6 +60,7 @@ export function Register() {
         flex={1}
         multiline
         textAlignVertical={"top"}
+        onChangeText={setDescription}
       />
 
       <Button
