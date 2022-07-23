@@ -1,3 +1,6 @@
+import firestore, {
+  FirebaseFirestoreTypes,
+} from "@react-native-firebase/firestore";
 import { VStack } from "native-base";
 import { useState } from "react";
 import { Alert } from "react-native";
@@ -15,6 +18,18 @@ export function Register() {
     }
 
     setIsloading(true);
+
+    firestore()
+      .collection("orders")
+      .add({
+        patrimony,
+        description,
+        status: `open`,
+        created_at: firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => {
+        Alert.alert("Solicitação", "Solicitação registrada com sucesso");
+      });
   }
 
   return (
