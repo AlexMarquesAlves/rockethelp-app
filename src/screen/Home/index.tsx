@@ -16,20 +16,20 @@ import { OrderProps } from "../../components/Order";
 import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
-  const { colors } = useTheme();
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
   const [orders, setOrders] = useState<OrderProps[]>([
     {
-      id: "1",
+      id: "456",
       patrimony: "123456",
-      when: "18/07/2022 às 10h",
+      when: "18/07/2022 às 14:00",
       status: "open",
     },
   ]);
 
   const navigation = useNavigation();
+  const { colors } = useTheme();
 
   function handleNewOrder() {
     navigation.navigate("new");
@@ -40,13 +40,12 @@ export function Home() {
   }
 
   return (
-    <VStack flex={1} pb={6} bg={"gray.700"}>
-      {/* Heading Bar */}
+    <VStack flex={1} pb={6} bg="gray.700">
       <HStack
-        w={"full"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        bg={"gray.600"}
+        w="full"
+        justifyContent="space-between"
+        alignItems="center"
+        bg="gray.600"
         pt={12}
         pb={5}
         px={6}
@@ -55,32 +54,33 @@ export function Home() {
 
         <IconButton icon={<SignOut size={26} color={colors.gray[300]} />} />
       </HStack>
-      {/* Info */}
+
       <VStack flex={1} px={6}>
         <HStack
-          w={"full"}
+          w="full"
           mt={8}
           mb={4}
-          justifyContent={"space-between"}
-          alignItems={"center"}
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Heading color={colors.gray[100]}>Meus chamados</Heading>
-          <Text color={"gray.200"}>3</Text>
+          <Heading color="gray.100">Solicitações</Heading>
+
+          <Text color="gray.200">{orders.length}</Text>
         </HStack>
 
         <HStack space={3} mb={8}>
-          {/* Filters */}
           <Filter
-            type={"open"}
-            title={"Em andamento"}
+            type="open"
+            title="em andamento"
             onPress={() => setStatusSelected("open")}
-            isActive={statusSelected === `open`}
+            isActive={statusSelected === "open"}
           />
+
           <Filter
-            type={"closed"}
-            title={"Finalizados"}
+            type="closed"
+            title="finalizados"
             onPress={() => setStatusSelected("closed")}
-            isActive={statusSelected === `closed`}
+            isActive={statusSelected === "closed"}
           />
         </HStack>
 
@@ -95,12 +95,7 @@ export function Home() {
           ListEmptyComponent={() => (
             <Center>
               <ChatTeardropText color={colors.gray[300]} size={40} />
-              <Text
-                color={"gray.300"}
-                fontSize={"xl"}
-                mt={6}
-                textAlign={"center"}
-              >
+              <Text color="gray.300" fontSize="xl" mt={6} textAlign="center">
                 Você ainda não possui {"\n"}
                 solicitações{" "}
                 {statusSelected === "open" ? "em andamento" : "finalizadas"}
@@ -109,7 +104,7 @@ export function Home() {
           )}
         />
 
-        <Button title={"Nova solicitação"} onPress={handleNewOrder} />
+        <Button title="Nova solicitação" onPress={handleNewOrder} />
       </VStack>
     </VStack>
   );
