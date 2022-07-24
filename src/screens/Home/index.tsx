@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import { Alert } from "react-native";
 import firestore from "@react-native-firebase/firestore";
+import { dateFormat } from "../../utils/firestoreDateFormat";
 
 export function Home() {
   const [loading, setLoading] = useState(true);
@@ -67,12 +68,15 @@ export function Home() {
             patrimony,
             description,
             status,
-            // when: ===> Pausa aqui <===
+            when: dateFormat(created_at), // ===> Pausa aqui <===
           };
         });
+
+        setOrders(data);
+        setLoading(false);
       });
 
-    return () => {};
+    return subscriber;
   }, []);
 
   return (
