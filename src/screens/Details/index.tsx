@@ -44,11 +44,18 @@ export function Details() {
       );
     }
 
-    firestore().collection<OrderFirestoreDTO>("orders").doc(orderId).update({
-      status: "closed",
-      solution,
-      closed_at: firestore.FieldValue.serverTimestamp(),
-    });
+    firestore()
+      .collection<OrderFirestoreDTO>("orders")
+      .doc(orderId)
+      .update({
+        status: "closed",
+        solution,
+        closed_at: firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => {
+        Alert.alert("Solicitação", "Solicitação encerrada.");
+        navigation.goBack();
+      });
   }
 
   useEffect(() => {
