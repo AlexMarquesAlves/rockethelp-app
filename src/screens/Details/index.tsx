@@ -4,7 +4,7 @@ import firestore, {
 import { useRoute } from "@react-navigation/native";
 import { Text, VStack } from "native-base";
 import { useEffect, useState } from "react";
-import { Header } from "../../components";
+import { Header, Loading } from "../../components";
 import { OrderProps } from "../../components/Order";
 import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
 import { dateFormat } from "../../utils/firestoreDateFormat";
@@ -58,6 +58,10 @@ export function Details() {
 
     return () => {};
   }, []);
+
+  if (isloading) {
+    return <Loading />;
+  }
 
   return (
     <VStack flex={1} bg={"gray.700"}>
