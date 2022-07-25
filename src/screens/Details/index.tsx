@@ -1,7 +1,7 @@
 import firestore, {
   FirebaseFirestoreTypes,
 } from "@react-native-firebase/firestore";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { HStack, ScrollView, Text, useTheme, VStack } from "native-base";
 import {
   CircleWavyCheck,
@@ -10,6 +10,7 @@ import {
   Hourglass,
 } from "phosphor-react-native";
 import { useEffect, useState } from "react";
+import { Alert } from "react-native";
 import { Button, CardDetails, Header, Input, Loading } from "../../components";
 import { OrderProps } from "../../components/Order";
 import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
@@ -31,9 +32,18 @@ export function Details() {
   const [order, setOrder] = useState<OrderDetails>({} as OrderDetails);
 
   const { colors } = useTheme();
-
+  const navigation = useNavigation();
   const route = useRoute();
   const { orderId } = route.params as RouteParams;
+
+  function handleOrderClose() {
+    if (!solution) {
+      return Alert.alert(
+        "Solicitação",
+        "Informa a solução para encerrar a solicitação"
+      );
+    }
+  }
 
   useEffect(() => {
     firestore()
