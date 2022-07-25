@@ -38,6 +38,16 @@ export function CardDetails({
           {description}{" "}
         </Text>
       )}
+
+      {children}
+
+      {!!footer && (
+        <Box borderTopWidth={1} borderTopColor={`gray.400`} mt={3}>
+          <Text mt={3} color={`gray.300`} fontSize={`sm`}>
+            {footer}
+          </Text>
+        </Box>
+      )}
     </VStack>
   );
 }
