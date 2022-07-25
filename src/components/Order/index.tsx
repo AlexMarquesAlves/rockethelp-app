@@ -9,9 +9,9 @@ import {
   VStack,
 } from "native-base";
 import {
+  CircleWavyCheck,
   ClockAfternoon,
   Hourglass,
-  CircleWavyCheck,
 } from "phosphor-react-native";
 
 export type OrderProps = {
