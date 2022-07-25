@@ -21,7 +21,10 @@ export function CardDetails({
 
   return (
     <VStack bg={`gray.700`} p={5} mt={5} rounded={`sm`}>
-      <HStack alignItems={`center`} mb={4}></HStack>
+      <HStack alignItems={`center`} mb={4}>
+        <Icon />
+        <Text>{title}</Text>
+      </HStack>
     </VStack>
   );
 }
