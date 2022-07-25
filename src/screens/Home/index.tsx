@@ -10,7 +10,7 @@ import {
 } from "native-base";
 import Logo from "../../assets/logo_secondary.svg";
 import { ChatTeardropText, SignOut } from "phosphor-react-native";
-import { Button, Filter, Order } from "../../components";
+import { Button, Filter, Loading, Order } from "../../components";
 import { useEffect, useState } from "react";
 import { OrderProps } from "../../components/Order";
 import { useNavigation } from "@react-navigation/native";
@@ -20,7 +20,7 @@ import firestore from "@react-native-firebase/firestore";
 import { dateFormat } from "../../utils/firestoreDateFormat";
 
 export function Home() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [statusSelected, setStatusSelected] = useState<"open" | "closed">(
     "open"
   );
@@ -47,7 +47,7 @@ export function Home() {
   }
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
 
     const subscriber = firestore()
       .collection("orders")
@@ -66,7 +66,7 @@ export function Home() {
         });
 
         setOrders(data);
-        setLoading(false);
+        setIsLoading(false);
       });
 
     return subscriber;
@@ -120,25 +120,29 @@ export function Home() {
           />
         </HStack>
 
-        <FlatList
-          data={orders}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Order data={item} onPress={() => handleOpenDetails(item.id)} />
-          )}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 100 }}
-          ListEmptyComponent={() => (
-            <Center>
-              <ChatTeardropText color={colors.gray[300]} size={40} />
-              <Text color="gray.300" fontSize="xl" mt={6} textAlign="center">
-                Você ainda não possui {"\n"}
-                solicitações{" "}
-                {statusSelected === "open" ? "em andamento" : "finalizadas"}
-              </Text>
-            </Center>
-          )}
-        />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <FlatList
+            data={orders}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Order data={item} onPress={() => handleOpenDetails(item.id)} />
+            )}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ paddingBottom: 100 }}
+            ListEmptyComponent={() => (
+              <Center>
+                <ChatTeardropText color={colors.gray[300]} size={40} />
+                <Text color="gray.300" fontSize="xl" mt={6} textAlign="center">
+                  Você ainda não possui {"\n"}
+                  solicitações{" "}
+                  {statusSelected === "open" ? "em andamento" : "finalizadas"}
+                </Text>
+              </Center>
+            )}
+          />
+        )}
 
         <Button title="Nova solicitação" onPress={handleNewOrder} />
       </VStack>
