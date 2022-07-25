@@ -6,6 +6,8 @@ import { Text, VStack } from "native-base";
 import { useEffect, useState } from "react";
 import { Header } from "../../components";
 import { OrderProps } from "../../components/Order";
+import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
+import { dateFormat } from "../../utils/firestoreDateFormat";
 
 type RouteParams = {
   orderId: string;
@@ -26,7 +28,33 @@ export function Details() {
   const { orderId } = route.params as RouteParams;
 
   useEffect(() => {
-    firestore().collection;
+    firestore()
+      .collection<OrderFirestoreDTO>("orders")
+      .doc(orderId)
+      .get()
+      .then((doc) => {
+        const {
+          patrimony,
+          description,
+          status,
+          created_at,
+          closed_at,
+          solution,
+        } = doc.data();
+        const closed = closed_at ? dateFormat(closed_at) : null;
+
+        setOrder({
+          id: doc.id,
+          patrimony,
+          description,
+          status,
+          solution,
+          when: dateFormat(created_at),
+          closed,
+        });
+
+        setIsloading(false);
+      });
 
     return () => {};
   }, []);
