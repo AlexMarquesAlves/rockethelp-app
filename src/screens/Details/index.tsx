@@ -1,9 +1,17 @@
 import { useRoute } from "@react-navigation/native";
 import { Text, VStack } from "native-base";
+import { useEffect, useState } from "react";
 import { Header } from "../../components";
+import { OrderProps } from "../../components/Order";
 
 type RouteParams = {
   orderId: string;
+};
+
+type OderDetails = OrderProps & {
+  description: string;
+  solution: string;
+  closed: string;
 };
 
 export function Details() {
