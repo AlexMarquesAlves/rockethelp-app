@@ -1,3 +1,6 @@
+import firestore, {
+  FirebaseFirestoreTypes,
+} from "@react-native-firebase/firestore";
 import { useRoute } from "@react-navigation/native";
 import { Text, VStack } from "native-base";
 import { useEffect, useState } from "react";
@@ -21,6 +24,12 @@ export function Details() {
 
   const route = useRoute();
   const { orderId } = route.params as RouteParams;
+
+  useEffect(() => {
+    firestore().collection;
+
+    return () => {};
+  }, []);
 
   return (
     <VStack flex={1} bg={"gray.700"}>
