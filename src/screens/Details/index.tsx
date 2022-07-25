@@ -3,9 +3,13 @@ import firestore, {
 } from "@react-native-firebase/firestore";
 import { useRoute } from "@react-navigation/native";
 import { HStack, ScrollView, Text, useTheme, VStack } from "native-base";
-import { CircleWavyCheck, Hourglass } from "phosphor-react-native";
+import {
+  CircleWavyCheck,
+  DesktopTower,
+  Hourglass,
+} from "phosphor-react-native";
 import { useEffect, useState } from "react";
-import { Header, Loading } from "../../components";
+import { CardDetails, Header, Loading } from "../../components";
 import { OrderProps } from "../../components/Order";
 import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
 import { dateFormat } from "../../utils/firestoreDateFormat";
@@ -90,7 +94,14 @@ export function Details() {
           {order.status === `closed` ? `Finalizado` : `Em andamento`}
         </Text>
 
-        <ScrollView mx={5} showsVerticalScrollIndicator={false}></ScrollView>
+        <ScrollView mx={5} showsVerticalScrollIndicator={false}>
+          <CardDetails
+            title="Equipamento"
+            description={`Patrimonio ${order.patrimony}`}
+            icon={DesktopTower}
+            footer={order.when}
+          />
+        </ScrollView>
       </HStack>
     </VStack>
   );
