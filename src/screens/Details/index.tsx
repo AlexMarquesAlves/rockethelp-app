@@ -1,11 +1,9 @@
-import firestore, {
-  FirebaseFirestoreTypes,
-} from "@react-native-firebase/firestore";
+import firestore from "@react-native-firebase/firestore";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Box, HStack, ScrollView, Text, useTheme, VStack } from "native-base";
 import {
   CircleWavyCheck,
-  Clipboard,
+  ClipboardText,
   DesktopTower,
   Hourglass,
 } from "phosphor-react-native";
@@ -128,13 +126,13 @@ export function Details() {
           title="Equipamento"
           description={`Patrimonio ${order.patrimony}`}
           icon={DesktopTower}
-          footer={order.when}
         />
 
         <CardDetails
           title="Descrição do problema"
           description={order.description}
-          icon={Clipboard}
+          icon={ClipboardText}
+          footer={`Registrado em ${order.when}`}
         />
 
         <CardDetails

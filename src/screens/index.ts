@@ -1,4 +1,4 @@
-export { SignIn } from "./SignIn";
+export { Details } from "./Details";
 export { Home } from "./Home";
 export { Register } from "./Register";
-export { Details } from "./Details";
+export { SignIn } from "./SignIn";

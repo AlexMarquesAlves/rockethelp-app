@@ -3,8 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { VStack } from "native-base";
 import { useState } from "react";
 import { Alert } from "react-native";
-import { Button, Input } from "../../components";
-import { Header } from "../../components";
+import { Button, Header, Input } from "../../components";
 
 export function Register() {
   const [isloading, setIsloading] = useState(false);
@@ -44,7 +43,7 @@ export function Register() {
 
   return (
     <VStack flex={1} p={6} bg={"gray.600"}>
-      <Header title={"Nova solicitação"} />
+      <Header title={"Solicitação"} />
 
       <Input
         placeholder={"Número do patrimônio"}

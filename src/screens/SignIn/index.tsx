@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { VStack, Heading, Icon, useTheme } from "native-base";
-import { Envelope, Key } from "phosphor-react-native";
-import Logo from "../../assets/logo_primary.svg";
-import { Alert } from "react-native";
-import { Input } from "../../components";
-import { Button } from "../../components";
 import auth from "@react-native-firebase/auth";
+import { Heading, Icon, useTheme, VStack } from "native-base";
+import { Envelope, Key } from "phosphor-react-native";
+import { useState } from "react";
+import { Alert } from "react-native";
+import Logo from "../../assets/logo_primary.svg";
+import { Button, Input } from "../../components";
 
 export function SignIn() {
   const [isLoading, setIsLoading] = useState(false);

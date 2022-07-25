@@ -1,3 +1,6 @@
+import auth from "@react-native-firebase/auth";
+import firestore from "@react-native-firebase/firestore";
+import { useNavigation } from "@react-navigation/native";
 import {
   Center,
   FlatList,
@@ -8,15 +11,12 @@ import {
   useTheme,
   VStack,
 } from "native-base";
-import Logo from "../../assets/logo_secondary.svg";
 import { ChatTeardropText, SignOut } from "phosphor-react-native";
-import { Button, Filter, Loading, Order } from "../../components";
 import { useEffect, useState } from "react";
-import { OrderProps } from "../../components/Order";
-import { useNavigation } from "@react-navigation/native";
-import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import { Alert } from "react-native";
-import firestore from "@react-native-firebase/firestore";
+import Logo from "../../assets/logo_secondary.svg";
+import { Button, Filter, Loading, Order } from "../../components";
+import { OrderProps } from "../../components/Order";
 import { dateFormat } from "../../utils/firestoreDateFormat";
 
 export function Home() {

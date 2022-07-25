@@ -1,6 +1,6 @@
-import { VStack, HStack, Text, Box, useTheme } from "native-base";
-import { ReactNode } from "react";
+import { Box, HStack, Text, useTheme, VStack } from "native-base";
 import { IconProps } from "phosphor-react-native";
+import { ReactNode } from "react";
 
 type Props = {
   title: string;
