@@ -32,6 +32,12 @@ export function CardDetails({
           {title}
         </Text>
       </HStack>
+
+      {!!description && (
+        <Text color={`gray.100`} fontSize={`md`}>
+          {description}{" "}
+        </Text>
+      )}
     </VStack>
   );
 }
