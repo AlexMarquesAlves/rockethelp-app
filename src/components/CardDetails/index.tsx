@@ -10,6 +10,14 @@ type Props = {
   children?: ReactNode;
 };
 
-export function CardDetails() {
-  return <VStack></VStack>;
+export function CardDetails({
+  title,
+  description,
+  footer = null,
+  icon: Icon,
+  children,
+}: Props) {
+  const { colors } = useTheme();
+
+  return <VStack bg={`gray.700`} p={5} mt={5} rounded={`sm`}></VStack>;
 }
