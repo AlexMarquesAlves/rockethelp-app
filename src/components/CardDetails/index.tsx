@@ -22,8 +22,15 @@ export function CardDetails({
   return (
     <VStack bg={`gray.700`} p={5} mt={5} rounded={`sm`}>
       <HStack alignItems={`center`} mb={4}>
-        <Icon />
-        <Text>{title}</Text>
+        <Icon color={colors.primary[700]} />
+        <Text
+          ml={2}
+          color={colors.gray[300]}
+          fontSize={`sm`}
+          textTransform={`uppercase`}
+        >
+          {title}
+        </Text>
       </HStack>
     </VStack>
   );
