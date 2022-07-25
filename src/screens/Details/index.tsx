@@ -2,7 +2,7 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from "@react-native-firebase/firestore";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { HStack, ScrollView, Text, useTheme, VStack } from "native-base";
+import { Box, HStack, ScrollView, Text, useTheme, VStack } from "native-base";
 import {
   CircleWavyCheck,
   Clipboard,
@@ -90,8 +90,6 @@ export function Details() {
 
         setIsloading(false);
       });
-
-    return () => {};
   }, []);
 
   if (isloading) {
@@ -100,7 +98,9 @@ export function Details() {
 
   return (
     <VStack flex={1} bg={"gray.700"}>
-      <Header title={"Solicitação"} />
+      <Box px={6} bg={`gray.600`}>
+        <Header title={"Solicitação"} />
+      </Box>
 
       <HStack bg={`gray.500`} justifyContent={`center`} p={4}>
         {order.status === "closed" ? (
@@ -140,15 +140,18 @@ export function Details() {
         <CardDetails
           title="Solução"
           icon={CircleWavyCheck}
+          description={order.solution}
           footer={order.closed && `Encerrado em ${order.closed}`}
         >
-          <Input
-            placeholder="Descrição da solução"
-            onChangeText={setSolution}
-            h={24}
-            textAlignVertical={`top`}
-            multiline
-          />
+          {order.status === `open` && (
+            <Input
+              placeholder="Descrição da solução"
+              onChangeText={setSolution}
+              h={24}
+              textAlignVertical={`top`}
+              multiline
+            />
+          )}
         </CardDetails>
       </ScrollView>
 
