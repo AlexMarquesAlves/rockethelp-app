@@ -2,7 +2,7 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from "@react-native-firebase/firestore";
 import { useRoute } from "@react-navigation/native";
-import { HStack, Text, VStack } from "native-base";
+import { HStack, Text, useTheme, VStack } from "native-base";
 import { CircleWavyCheck, Hourglass } from "phosphor-react-native";
 import { useEffect, useState } from "react";
 import { Header, Loading } from "../../components";
@@ -71,7 +71,11 @@ export function Details() {
       <Header title={"Solicitação"} />
 
       <HStack bg={`gray.500`} justifyContent={`center`} p={4}>
-        {order.status === "closed" ? <CircleWavyCheck /> : <Hourglass />}
+        {order.status === "closed" ? (
+          <CircleWavyCheck size={22} color={colors.green[300]} />
+        ) : (
+          <Hourglass size={22} color={colors.green[300]} />
+        )}
       </HStack>
     </VStack>
   );
