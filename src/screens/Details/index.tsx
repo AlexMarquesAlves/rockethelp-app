@@ -153,7 +153,11 @@ export function Details() {
       </ScrollView>
 
       {order.status === `open` && (
-        <Button title={`Encerrar solicitação`} m={5} />
+        <Button
+          title={`Encerrar solicitação`}
+          m={5}
+          onPress={handleOrderClose}
+        />
       )}
     </VStack>
   );
