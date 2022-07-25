@@ -90,7 +90,7 @@ export function Details() {
           {order.status === `closed` ? `Finalizado` : `Em andamento`}
         </Text>
 
-        <ScrollView></ScrollView>
+        <ScrollView mx={5} showsVerticalScrollIndicator={false}></ScrollView>
       </HStack>
     </VStack>
   );
