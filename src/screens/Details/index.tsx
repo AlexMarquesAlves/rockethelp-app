@@ -10,7 +10,7 @@ import {
   Hourglass,
 } from "phosphor-react-native";
 import { useEffect, useState } from "react";
-import { CardDetails, Header, Input, Loading } from "../../components";
+import { Button, CardDetails, Header, Input, Loading } from "../../components";
 import { OrderProps } from "../../components/Order";
 import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
 import { dateFormat } from "../../utils/firestoreDateFormat";
@@ -105,18 +105,18 @@ export function Details() {
         />
 
         <CardDetails
-          title="Descricao do problema"
+          title="Descrição do problema"
           description={order.description}
           icon={Clipboard}
         />
 
         <CardDetails
-          title="Solucao"
+          title="Solução"
           icon={CircleWavyCheck}
           footer={order.closed && `Encerrado em ${order.closed}`}
         >
           <Input
-            placeholder="Descricao da solucao"
+            placeholder="Descrição da solução"
             onChangeText={setSolution}
             h={24}
             textAlignVertical={`top`}
@@ -124,6 +124,10 @@ export function Details() {
           />
         </CardDetails>
       </ScrollView>
+
+      {order.status === `open` && (
+        <Button title={`Encerrar solicitação`} m={5} />
+      )}
     </VStack>
   );
 }
