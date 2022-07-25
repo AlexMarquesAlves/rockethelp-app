@@ -19,5 +19,9 @@ export function CardDetails({
 }: Props) {
   const { colors } = useTheme();
 
-  return <VStack bg={`gray.700`} p={5} mt={5} rounded={`sm`}></VStack>;
+  return (
+    <VStack bg={`gray.700`} p={5} mt={5} rounded={`sm`}>
+      <HStack alignItems={`center`} mb={4}></HStack>
+    </VStack>
+  );
 }
