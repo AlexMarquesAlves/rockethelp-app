@@ -8,13 +8,17 @@ type RouteParams = {
   orderId: string;
 };
 
-type OderDetails = OrderProps & {
+type OrderDetails = OrderProps & {
   description: string;
   solution: string;
   closed: string;
 };
 
 export function Details() {
+  const [isloading, setIsloading] = useState(true);
+  const [solution, setSolution] = useState(``);
+  const [order, setOrder] = useState<OrderDetails>({} as OrderDetails);
+
   const route = useRoute();
   const { orderId } = route.params as RouteParams;
 
