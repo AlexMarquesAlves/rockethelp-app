@@ -2,7 +2,7 @@ import firestore, {
   FirebaseFirestoreTypes,
 } from "@react-native-firebase/firestore";
 import { useRoute } from "@react-navigation/native";
-import { HStack, Text, useTheme, VStack } from "native-base";
+import { HStack, ScrollView, Text, useTheme, VStack } from "native-base";
 import { CircleWavyCheck, Hourglass } from "phosphor-react-native";
 import { useEffect, useState } from "react";
 import { Header, Loading } from "../../components";
@@ -89,6 +89,8 @@ export function Details() {
         >
           {order.status === `closed` ? `Finalizado` : `Em andamento`}
         </Text>
+
+        <ScrollView></ScrollView>
       </HStack>
     </VStack>
   );
