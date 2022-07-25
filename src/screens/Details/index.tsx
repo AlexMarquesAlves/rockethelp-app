@@ -76,6 +76,17 @@ export function Details() {
         ) : (
           <Hourglass size={22} color={colors.secondary[700]} />
         )}
+
+        <Text
+          fontSize={`sm`}
+          color={
+            order.status === `closed`
+              ? colors.green[300]
+              : colors.secondary[700]
+          }
+          ml={2}
+          textTransform={`uppercase`}
+        ></Text>
       </HStack>
     </VStack>
   );
