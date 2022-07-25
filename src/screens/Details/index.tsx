@@ -43,6 +43,12 @@ export function Details() {
         "Informa a solução para encerrar a solicitação"
       );
     }
+
+    firestore().collection<OrderFirestoreDTO>("orders").doc(orderId).update({
+      status: "closed",
+      solution,
+      closed_at: firestore.FieldValue.serverTimestamp(),
+    });
   }
 
   useEffect(() => {
