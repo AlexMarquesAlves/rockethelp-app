@@ -10,7 +10,7 @@ import {
   Hourglass,
 } from "phosphor-react-native";
 import { useEffect, useState } from "react";
-import { CardDetails, Header, Loading } from "../../components";
+import { CardDetails, Header, Input, Loading } from "../../components";
 import { OrderProps } from "../../components/Order";
 import { OrderFirestoreDTO } from "../../DTOs/OrderFirestoreDTO";
 import { dateFormat } from "../../utils/firestoreDateFormat";
@@ -108,6 +108,12 @@ export function Details() {
             description={order.description}
             icon={Clipboard}
           />
+
+          <CardDetails
+            title="Solucao"
+            icon={CircleWavyCheck}
+            footer={order.closed && `Encerrado em ${order.closed}`}
+          ></CardDetails>
         </ScrollView>
       </HStack>
     </VStack>
