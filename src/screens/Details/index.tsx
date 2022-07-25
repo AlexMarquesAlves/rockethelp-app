@@ -86,7 +86,9 @@ export function Details() {
           }
           ml={2}
           textTransform={`uppercase`}
-        ></Text>
+        >
+          {order.status === `closed` ? `Finalizado` : `Em andamento`}
+        </Text>
       </HStack>
     </VStack>
   );
