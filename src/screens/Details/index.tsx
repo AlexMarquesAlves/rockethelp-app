@@ -5,6 +5,7 @@ import { useRoute } from "@react-navigation/native";
 import { HStack, ScrollView, Text, useTheme, VStack } from "native-base";
 import {
   CircleWavyCheck,
+  Clipboard,
   DesktopTower,
   Hourglass,
 } from "phosphor-react-native";
@@ -100,6 +101,12 @@ export function Details() {
             description={`Patrimonio ${order.patrimony}`}
             icon={DesktopTower}
             footer={order.when}
+          />
+
+          <CardDetails
+            title="Descricao do problema"
+            description={order.description}
+            icon={Clipboard}
           />
         </ScrollView>
       </HStack>
