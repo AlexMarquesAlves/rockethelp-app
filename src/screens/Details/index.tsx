@@ -55,6 +55,10 @@ export function Details() {
       .then(() => {
         Alert.alert("Solicitação", "Solicitação encerrada.");
         navigation.goBack();
+      })
+      .catch((error) => {
+        console.log(error);
+        Alert.alert("Solicitação", "Não foi possível encerrar a solicitação");
       });
   }
 
