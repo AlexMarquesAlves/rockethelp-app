@@ -113,7 +113,15 @@ export function Details() {
             title="Solucao"
             icon={CircleWavyCheck}
             footer={order.closed && `Encerrado em ${order.closed}`}
-          ></CardDetails>
+          >
+            <Input
+              placeholder="Descricao da solucao"
+              onChangeText={setSolution}
+              h={24}
+              textAlignVertical={`top`}
+              multiline
+            />
+          </CardDetails>
         </ScrollView>
       </HStack>
     </VStack>
