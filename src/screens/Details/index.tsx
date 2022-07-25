@@ -94,36 +94,36 @@ export function Details() {
         >
           {order.status === `closed` ? `Finalizado` : `Em andamento`}
         </Text>
-
-        <ScrollView mx={5} showsVerticalScrollIndicator={false}>
-          <CardDetails
-            title="Equipamento"
-            description={`Patrimonio ${order.patrimony}`}
-            icon={DesktopTower}
-            footer={order.when}
-          />
-
-          <CardDetails
-            title="Descricao do problema"
-            description={order.description}
-            icon={Clipboard}
-          />
-
-          <CardDetails
-            title="Solucao"
-            icon={CircleWavyCheck}
-            footer={order.closed && `Encerrado em ${order.closed}`}
-          >
-            <Input
-              placeholder="Descricao da solucao"
-              onChangeText={setSolution}
-              h={24}
-              textAlignVertical={`top`}
-              multiline
-            />
-          </CardDetails>
-        </ScrollView>
       </HStack>
+
+      <ScrollView mx={5} showsVerticalScrollIndicator={false}>
+        <CardDetails
+          title="Equipamento"
+          description={`Patrimonio ${order.patrimony}`}
+          icon={DesktopTower}
+          footer={order.when}
+        />
+
+        <CardDetails
+          title="Descricao do problema"
+          description={order.description}
+          icon={Clipboard}
+        />
+
+        <CardDetails
+          title="Solucao"
+          icon={CircleWavyCheck}
+          footer={order.closed && `Encerrado em ${order.closed}`}
+        >
+          <Input
+            placeholder="Descricao da solucao"
+            onChangeText={setSolution}
+            h={24}
+            textAlignVertical={`top`}
+            multiline
+          />
+        </CardDetails>
+      </ScrollView>
     </VStack>
   );
 }
