@@ -74,7 +74,7 @@ export function Details() {
         {order.status === "closed" ? (
           <CircleWavyCheck size={22} color={colors.green[300]} />
         ) : (
-          <Hourglass size={22} color={colors.green[300]} />
+          <Hourglass size={22} color={colors.secondary[700]} />
         )}
       </HStack>
     </VStack>
