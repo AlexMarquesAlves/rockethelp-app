@@ -25,6 +25,8 @@ export function Details() {
   const [solution, setSolution] = useState(``);
   const [order, setOrder] = useState<OrderDetails>({} as OrderDetails);
 
+  const { colors } = useTheme();
+
   const route = useRoute();
   const { orderId } = route.params as RouteParams;
 
